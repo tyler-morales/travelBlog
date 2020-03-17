@@ -1,17 +1,17 @@
 nav {
     display: flex;
-    justify-content: space-around;
-
-    font-weight: var(--bold);
-    font-size: 24px;
-    padding-top: 40px;
-    a {
-        color: white;
-        text-decoration: none;
-    }
+    justify-content: space-between;
+    padding-top: var(--space-md);
+    margin: 0 auto;
+    max-width: 80vw;
+    color: white;
 }
 
 .nav-links {
     display: flex;
-    gap: 40px;
+    margin: 0 -10px;
+
+    li>* {
+        margin: 0 10px;
+    }
 }

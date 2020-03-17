@@ -4,11 +4,18 @@
     box-sizing: border-box;
 }
 
-ul,li {
+ul,
+li {
     list-style-type: none;
 }
 
-// breakpoints
-@mixin for-phone-only {
-    @media (max-width: 599px) { @content; }
-  }
+a {
+    text-decoration: none;
+}
+
+button {
+    display: inline-block;
+    background: none;
+    outline: none;
+    border: none;
+}
