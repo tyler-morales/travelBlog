@@ -33,14 +33,6 @@
         max-width: 450px;
     }
 
-    &--location {
-        font-weight: 400;
-        letter-spacing: .1em;
-        text-transform: uppercase;
-        font-size: 1em;
-
-    }
-
     &--title {
         font-size: 3.2em;
         margin-bottom: var(--space-xs);
@@ -49,6 +41,7 @@
 
     &__facts {
         font-size: .9em;
+
         &--description {
             font-weight: 500;
         }
@@ -56,45 +49,113 @@
         &--location {
             font-weight: 200;
         }
-        &--note{
+
+        &--note {
             opacity: .5;
             font-size: .86em;
         }
     }
 }
 
-.destinations {
-    color: #201d1dcc;
+.places__container,
+#fader,
+.fade {
+    position: relative;
+    background-color: grey;
     display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-    background-image:
-        linear-gradient(to bottom, rgba(56, 54, 69, 0.439), rgba(45, 43, 59, 0.425)),
-        url(https://www.tremblant.ca/-/media/tremblant/mountain-and-village/pedestrian-village/village-view-sunset-l.ashx?h=1350&w=2400&hash=AFFB465E3339E1B6DDF7154028D9159C);
-    background-size: cover;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
     height: 100vh;
-    margin: 0 auto var(--space-sm) auto;
-    padding: 80px;
 
-    &--item {
-        height: min-content;
+    &>div,
+    .fade {
+        position: absolute;
+    }
+
+    .places--title {
+        z-index: 10;
+        top: 50px;
+        left: 50px;
+        position: absolute;
         color: white;
+        letter-spacing: .175em;
 
-        &:hover {
-            color: white;
-            cursor: pointer;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transform: rotate(180deg);
+
+        @include breakpoint(sm) {
+            left: 20px;
         }
+    }
+
+    // text item container
+    .places {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 85vw;
+        justify-content: center;
+
+        @media (max-width: 870px) {
+            margin: 0 auto;
+            flex-direction: column;
+        }
+
+        // text items
+        &--item {
+            cursor: pointer;
+            color: #fff;
+            opacity: .5;
+            font: 600 4.5em var(--font-primary);
+            padding: 20px;
+            margin: 10px;
+            list-style-type: none;
+
+            @media (max-width: 870px) {
+                font-size: 3em;
+            }
+        }
+    }
+
+    // transition effects
+    .fadeOut {
+        opacity: 0;
+    }
+
+    .fadeIn {
+        opacity: 1;
+    }
+
+    .fade {
+        background-position: center;
+        background-size: cover;
+        transition: opacity .5s ease-in-out;
+    }
+
+    .hide {
+        display: none;
     }
 }
 
+
+
+
+
 footer {
     display: flex;
-
     justify-content: center;
     margin: var(--space-xl) auto;
 
     &>li {
         margin: 0 var(--space-sm);
     }
+}
+
+// global type attributes
+.caps-title {
+    font-weight: 400;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-size: 1em;
 }

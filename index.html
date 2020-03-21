@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/css/style.css">
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Travel Blog</title>
@@ -26,7 +28,7 @@
         <!-- hero -->
         <div class="hero container">
             <div class="hero__text">
-                <h3 class="hero--location">🇪🇨 Ecuador</h3>
+                <h3 class="caps-title">🇪🇨 Ecuador</h3>
                 <h1 class="hero--title">Lifelong memories, just a <span class="highlight">few seconds away</span></h1>
                 <ul class="hero__facts">
                     <li class="hero__facts--description">Experiencing the wonders of the jungle</li>
@@ -40,24 +42,19 @@
                 </a>
             </div>
         </div>
-        <div class="scroll-down">
+       <a href="#fader"><div class="scroll-down">
             <h6 class="scroll-down--text">scroll down</h6>
             <i class="fa fa-angle-down"></i>
         </div>
+    </a>
     </div>
 
     <!-- destinations -->
-    <ul class="destinations" id="destination">
-        <li class="destinations--item">Ecuador</li>
-        <li class="destinations--item">Canada</li>
-        <li class="destinations--item">California</li>
-        <li class="destinations--item">New York</li>
-        <li class="destinations--item">Minnesota</li>
-        <li class="destinations--item">Washington</li>
-        <li class="destinations--item">Mexico</li>
-        <li class="destinations--item">Colorado</li>
-        <li class="destinations--item">Illinois</li>
-    </ul>
+    <div class='places__container'>
+        <h3 class="places--title caps-title"><i class="fa fa-angle-down rotate-arrow"></i>Featured Destinations</h3>
+        <div id='fader'></div>
+        <div id="destinations" class="places text-fill-animate"></div>
+    </div>
 
 
     <footer>
@@ -67,6 +64,7 @@
     </footer>
 
 
+    <script src="js/functions.js"></script>
     <script src="js/scripts.js"></script>
 </body>
 

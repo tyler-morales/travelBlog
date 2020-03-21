@@ -22,3 +22,21 @@ html {
   }
 }
 
+.text-fill-animate>a {
+  background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)) left no-repeat, #D1D2DE;
+  background-size: 0% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: .8s ease-in-out;
+
+  &:hover {
+    background-size: 100% 100%;
+    opacity: 1 !important;
+  }
+}
+
+.rotate-arrow {
+  margin-bottom: 5px;
+  transform: rotate(180deg) !important;
+}

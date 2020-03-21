@@ -17,6 +17,21 @@ html {
   .scroll-down--text {
     margin-right: 15px; }
 
+.text-fill-animate > a {
+  background: linear-gradient(white, white) left no-repeat, #D1D2DE;
+  background-size: 0% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: .8s ease-in-out; }
+  .text-fill-animate > a:hover {
+    background-size: 100% 100%;
+    opacity: 1 !important; }
+
+.rotate-arrow {
+  margin-bottom: 5px;
+  transform: rotate(180deg) !important; }
+
 * {
   margin: 0;
   padding: 0;
@@ -27,7 +42,8 @@ li {
   list-style-type: none; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  cursor: pointer; }
 
 button {
   display: inline-block;
@@ -55,7 +71,7 @@ Spacing
   /* components padding */
   --btn-padding: var(--space-sm) var(--space-md) var(--space-sm) var(--space-sm); }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   :root {
     --space-unit: 1.25em;
     --component-padding: var(--space-md); } }
@@ -93,7 +109,7 @@ Spacing
 .margin-bottom--xxl {
   margin-bottom: var(--space-xxl); }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .margin-top,
   .margin-top--md {
     margin-top: var(--space-lg); }
@@ -124,7 +140,7 @@ Typography
 -------------------------------- */
 :root {
   --font-primary: 'Inter', sans-serif;
-  --font-secondary: serif;
+  --font-secondary: 'Playfair Display', serif;
   /* set base values */
   --text-base-size: 1.2em;
   --text-scale-ratio: 1.2;
@@ -282,7 +298,8 @@ nav {
   padding-top: var(--space-md);
   margin: 0 auto;
   max-width: 80vw;
-  color: white; }
+  color: white;
+  position: sticky; }
 
 .nav-links {
   display: flex;
@@ -296,7 +313,7 @@ nav {
   background-size: cover;
   background-position: center;
   padding: var(--space-md); }
-  @media (min-width: 992px) {
+  @media (max-width: 992px) {
     .above-fold {
       padding: var(--space-md); } }
 
@@ -316,11 +333,6 @@ nav {
     flex-direction: column;
     justify-content: start;
     max-width: 450px; }
-  .hero--location {
-    font-weight: 400;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    font-size: 1em; }
   .hero--title {
     font-size: 3.2em;
     margin-bottom: var(--space-xs);
@@ -335,23 +347,86 @@ nav {
       opacity: .5;
       font-size: .86em; }
 
-.destinations {
-  color: #201d1dcc;
+.places__container,
+#fader,
+.fade {
+  position: relative;
+  background-color: grey;
   display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
-  background-image: linear-gradient(to bottom, rgba(56, 54, 69, 0.439), rgba(45, 43, 59, 0.425)), url(https://www.tremblant.ca/-/media/tremblant/mountain-and-village/pedestrian-village/village-view-sunset-l.ashx?h=1350&w=2400&hash=AFFB465E3339E1B6DDF7154028D9159C);
-  background-size: cover;
-  width: 100%;
-  height: 100vh;
-  margin: 0 auto var(--space-sm) auto;
-  padding: 80px; }
-  .destinations--item {
-    height: min-content;
-    color: white; }
-    .destinations--item:hover {
-      color: white;
-      cursor: pointer; }
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh; }
+  .places__container > div,
+  .places__container .fade,
+  #fader > div,
+  #fader .fade,
+  .fade > div,
+  .fade .fade {
+    position: absolute; }
+  .places__container .places--title,
+  #fader .places--title,
+  .fade .places--title {
+    z-index: 10;
+    top: 50px;
+    left: 50px;
+    position: absolute;
+    color: white;
+    letter-spacing: .175em;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg); }
+    @media (max-width: 600px) {
+      .places__container .places--title,
+      #fader .places--title,
+      .fade .places--title {
+        left: 20px; } }
+  .places__container .places,
+  #fader .places,
+  .fade .places {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 85vw;
+    justify-content: center; }
+    @media (max-width: 870px) {
+      .places__container .places,
+      #fader .places,
+      .fade .places {
+        margin: 0 auto;
+        flex-direction: column; } }
+    .places__container .places--item,
+    #fader .places--item,
+    .fade .places--item {
+      cursor: pointer;
+      color: #fff;
+      opacity: .5;
+      font: 600 4.5em var(--font-primary);
+      padding: 20px;
+      margin: 10px;
+      list-style-type: none; }
+      @media (max-width: 870px) {
+        .places__container .places--item,
+        #fader .places--item,
+        .fade .places--item {
+          font-size: 3em; } }
+  .places__container .fadeOut,
+  #fader .fadeOut,
+  .fade .fadeOut {
+    opacity: 0; }
+  .places__container .fadeIn,
+  #fader .fadeIn,
+  .fade .fadeIn {
+    opacity: 1; }
+  .places__container .fade,
+  #fader .fade,
+  .fade .fade {
+    background-position: center;
+    background-size: cover;
+    transition: opacity .5s ease-in-out; }
+  .places__container .hide,
+  #fader .hide,
+  .fade .hide {
+    display: none; }
 
 footer {
   display: flex;
@@ -359,3 +434,9 @@ footer {
   margin: var(--space-xl) auto; }
   footer > li {
     margin: 0 var(--space-sm); }
+
+.caps-title {
+  font-weight: 400;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-size: 1em; }
