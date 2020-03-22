@@ -42,11 +42,12 @@
                 </a>
             </div>
         </div>
-       <a href="#fader"><div class="scroll-down">
-            <h6 class="scroll-down--text">scroll down</h6>
-            <i class="fa fa-angle-down"></i>
-        </div>
-    </a>
+        <a href="#fader">
+            <div class="scroll-down">
+                <h6 class="scroll-down--text">scroll down</h6>
+                <i class="fa fa-angle-down"></i>
+            </div>
+        </a>
     </div>
 
     <!-- destinations -->
@@ -57,11 +58,37 @@
     </div>
 
 
-    <footer>
-        <li>Trips</li>
-        <li>Tyler Morales</li>
-        <li>About</li>
+    <section class="location-list">
+        <div class="location-list__section">
+            <h4 class="location-list__section--title">Countries</h4>
+            <ul class="location-list__section__items">
+                <li class="location-list__section__items--item">🇺🇸 United States</li>
+                <li class="location-list__section__items--item">🇪🇨 Ecuador</li>
+                <li class="location-list__section__items--item">🇨🇦 Canada</li>
+            </ul>
+        </div>
+        <hr>
+        <div class="location-list__section">
+            <h4 class="location-list__section--title">States</h4>
+            <ul class="location-list__section__items" id="states"></ul>
+        </div>
+        <hr>
+        <div class="location-list__section">
+            <h4 class="location-list__section--title">Cities</h4>
+            <ul class="location-list__section__items" id="cities"></ul>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <ul class="footer__links">
+            <li class="footer__links--item">Tyler Morales</li>
+            <li class="footer__links--item">About</li>
+            <li class="footer__links--item">Socials</li>
+            <li class="footer__links--item">Learn More</li>
+            <li class="footer__links--item">Partner</li>
+        </ul>
     </footer>
+
 
 
     <script src="js/functions.js"></script>

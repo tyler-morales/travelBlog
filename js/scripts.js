@@ -12,3 +12,15 @@ heroBtn.addEventListener('mouseleave', (e) => {
     btnTextEl.classList.remove('btn-text-hover')
 })
 
+
+// add states
+let statesVisited = ['Arizona', 'Illinois', "California", 'Florida', 'New York', "Massachutes", 'Washington', 'Colorado', 'Minnesota']
+
+// add cities
+let citiesVisited = ['Chicago', 'Boston', "New York City", 'Denver', 'Fort Collins', 'Quito', 'Quebec City', 'Tuscon', 'Seattle', 'Los Angeles', 'St. Paul']
+
+let citiesEl = document.getElementById('cities')
+let statesEl = document.getElementById('states')
+
+populateDestination(citiesEl, citiesVisited, cities)
+populateDestination(statesEl, statesVisited, states)

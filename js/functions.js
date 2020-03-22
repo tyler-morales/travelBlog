@@ -1,16 +1,22 @@
-let doc = document,
-    M,
-    I,
-    hC,
-    aC,
-    rC,
-    isInt
+// POPULATEDESTINATION fn (create place list items)
+const populateDestination = (locationContainer, placesArr) => {
+    placesArr.forEach(placeVisited => {
+        //create li item for each el in arr
+        let listItem = document.createElement('li');
+        // assign array item name to list item
+        listItem.textContent = placeVisited
+        // add a style class to list item
+        listItem.classList.add('location-list__section__items--item')
+        // add each item to its parent
+        locationContainer.appendChild(listItem)
+    });
+
+    // return list of items
+    return locationContainer
+}
+
+// FADER TRANSITION
 addEventListener("load", () => {
-    M = tag => doc.createElement(tag)
-    I = id => doc.getElementById(id)
-    hC = (element, className) => {
-        return element.classList.contains(className)
-    }
     aC = (element, className, func) => {
         element.classList.add(className.trim())
         if (func) func(element)
@@ -25,14 +31,14 @@ addEventListener("load", () => {
             return rC(element, className, func)
         }
     }
-    
+
     // put below on another page using a load Event - except the end load line and below
     function FadeMaker(faderElement, placesElement) {
         const places = []
         let place
         this.addPlace = (name, background, link) => {
-            const item = M("a"),
-                placeEl = M("div")
+            const item = document.createElement("a"),
+                placeEl = document.createElement("div")
             aC(placeEl, "fadeOut")
             placeEl.style.backgroundImage = 'linear-gradient(180deg, transparent, rgba(0, 0, 0, .5)),url("' + background + '")'
             item.textContent = name
@@ -61,7 +67,7 @@ addEventListener("load", () => {
     }
 
     //create locations
-    const fm = new FadeMaker(I("fader"), I("destinations"))
+    const fm = new FadeMaker(document.getElementById('fader'), document.getElementById('destinations'))
     fm.addPlace(
             "Equador",
             "images/ecuador-1.jpg",

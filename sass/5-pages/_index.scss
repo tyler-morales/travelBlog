@@ -61,7 +61,7 @@
 #fader,
 .fade {
     position: relative;
-    background-color: grey;
+    background-color: rgba(0, 0, 0, 0.383);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -141,16 +141,6 @@
 
 
 
-
-footer {
-    display: flex;
-    justify-content: center;
-    margin: var(--space-xl) auto;
-
-    &>li {
-        margin: 0 var(--space-sm);
-    }
-}
 
 // global type attributes
 .caps-title {
