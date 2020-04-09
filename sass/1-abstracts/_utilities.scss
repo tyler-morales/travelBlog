@@ -16,9 +16,25 @@ html {
   margin: 0 auto;
   text-transform: uppercase;
   align-items: center;
+  transition: all .5s;
+  &:hover{opacity: 1;}
 
   &--text {
     margin-right: 15px;
+  }
+
+  &--arrow {
+    animation: 1s ease-in-out infinite alternate levitate;
+  }
+
+  @keyframes levitate {
+    from {
+      transform: translateY(0)
+    }
+
+    to {
+      transform: translateY(3px)
+    }
   }
 }
 
@@ -39,4 +55,9 @@ html {
 .rotate-arrow {
   margin-bottom: 5px;
   transform: rotate(180deg) !important;
+}
+
+.u-mb{
+  margin-top: 20px;
+  font-weight: 300;
 }

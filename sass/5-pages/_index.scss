@@ -139,13 +139,100 @@
 }
 
 
+.voyages {
+    background-image:
+        linear-gradient(180deg, transparent, rgba(0, 0, 0, .7)),
+        url('/images/canada-2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    padding: var(--space-xl);
 
+    display: grid;
+    justify-content: center;
+    align-content: center;
 
+    &--title {
+        text-align: center;
+        color: #bfeaf8;
+        letter-spacing: .5em !important;
+    }
+
+    &--name {
+        text-align: center;
+        color: white;
+        font-size: var(--text-xxl);
+        text-transform: uppercase;
+    }
+
+    .table-container {
+        position: relative;
+
+        display: grid;
+        align-items: center;
+        justify-items: start;
+        gap: var(--space-md);
+        padding: var(--space-sm);
+        color: white;
+
+        @include breakpoint(lg) {
+            grid-template-columns: 1fr;
+        }
+
+        .table {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            flex-wrap: wrap;
+
+            &--name {
+                font-weight: 400;
+                font-size: var(--text-md);
+                width: 250px;
+            }
+
+            &--item {
+                font-weight: 200;
+                font-size: var(--text-sm);
+                text-align: left;
+                width: 280px;
+                margin-right: 20px;
+
+                @include breakpoint (md) {
+                    margin-right: 0;
+                }
+            }
+
+            &--date {
+                width: min-content;
+            }
+
+            &>* {
+                margin-bottom: 0;
+
+                @include breakpoint (md) {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+
+    .btn {
+        margin: var(--space-xl) auto;
+    }
+}
+
+hr {
+    width: 100%;
+    color: white;
+    opacity: .3;
+}
 
 // global type attributes
 .caps-title {
     font-weight: 400;
     letter-spacing: .1em;
     text-transform: uppercase;
-    font-size: 1em;
+    font-size: var(--text-sm);
 }

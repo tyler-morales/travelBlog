@@ -13,9 +13,20 @@ html {
   max-width: 80vw;
   margin: 0 auto;
   text-transform: uppercase;
-  align-items: center; }
+  align-items: center;
+  transition: all .5s; }
+  .scroll-down:hover {
+    opacity: 1; }
   .scroll-down--text {
     margin-right: 15px; }
+  .scroll-down--arrow {
+    animation: 1s ease-in-out infinite alternate levitate; }
+
+@keyframes levitate {
+  from {
+    transform: translateY(0); }
+  to {
+    transform: translateY(3px); } }
 
 .text-fill-animate > a {
   background: linear-gradient(white, white) left no-repeat, #D1D2DE;
@@ -31,6 +42,10 @@ html {
 .rotate-arrow {
   margin-bottom: 5px;
   transform: rotate(180deg) !important; }
+
+.u-mb {
+  margin-top: 20px;
+  font-weight: 300; }
 
 * {
   margin: 0;
@@ -156,10 +171,10 @@ Typography
   --heading-line-height: 1.2;
   --body-line-height: 1.4; }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   :root {
     --text-base-size: 1.1em;
-    --text-scale-ratio: 1; } }
+    --text-scale-ratio: 1.2; } }
 
 body {
   font-size: var(--text-base-size);
@@ -256,30 +271,30 @@ li {
 
 .btn {
   width: max-content;
-  border-radius: 10px;
   transition: all .3s;
   cursor: pointer;
-  border-radius: 50px; }
+  align-items: center;
+  font-size: .8em;
+  position: relative;
+  display: flex; }
 
 .hero--btn {
-  display: flex;
-  align-items: center;
   margin-top: var(--space-lg);
+  border-radius: 50px;
   padding: var(--btn-padding);
   color: white;
-  border: 2px solid #e9e9e962;
-  font-size: .8em;
-  position: relative; }
+  border: 2px solid #e9e9e962; }
   .hero--btn .arrow {
     padding: 8px;
     border-radius: 50px;
     border: 2px solid white;
-    transform: rotate(-45deg);
+    transform: rotate(-45deg) scale(0.8);
+    transform-origin: center;
     width: 40px;
     position: absolute;
     transition: all .3s; }
   .hero--btn .arrow-hover {
-    transform: rotate(0deg);
+    transform: rotate(0deg) scale(1);
     border: 2px solid #96b2cf;
     width: 45px; }
     @media (max-width: 500px) {
@@ -291,6 +306,64 @@ li {
     transition: all .3s; }
   .hero--btn .btn-text-hover {
     transform: translateX(5px); }
+
+.voyage--btn {
+  display: flex;
+  align-items: center;
+  padding: var(--space-sm) var(--space-lg);
+  color: white;
+  border: 2px solid #e9e9e962;
+  font-size: .8em;
+  position: relative;
+  border-radius: 1px; }
+  .voyage--btn:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer; }
+
+.controls {
+  left: -100px;
+  top: 99px;
+  position: absolute;
+  transition: all .3s;
+  transform: scale(1); }
+  .controls .arrow {
+    padding: 8px;
+    border-radius: 50px;
+    border: 2px solid white;
+    transform-origin: center;
+    width: 40px;
+    transition: all .3s; }
+    .controls .arrow:hover {
+      cursor: pointer;
+      transform: scale(1.2); }
+  .controls--left {
+    margin-bottom: 20px;
+    transform: rotate(180deg); }
+  .controls--right {
+    margin-bottom: 20px; }
+
+.trans {
+  transition: all .3s;
+  animation: fadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(110px); }
+  to {
+    transform: translateX(0);
+    opacity: 1; } }
+
+.fadeIn {
+  transition: all .3s;
+  animation: fade 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+
+@keyframes fade {
+  from {
+    visibility: hidden; }
+  to {
+    visibility: visible; } }
 
 .location-list {
   display: flex;
@@ -470,8 +543,71 @@ nav {
   .fade .hide {
     display: none; }
 
+.voyages {
+  background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.7)), url("/images/canada-2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  padding: var(--space-xl);
+  display: grid;
+  justify-content: center;
+  align-content: center; }
+  .voyages--title {
+    text-align: center;
+    color: #bfeaf8;
+    letter-spacing: .5em !important; }
+  .voyages--name {
+    text-align: center;
+    color: white;
+    font-size: var(--text-xxl);
+    text-transform: uppercase; }
+  .voyages .table-container {
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-items: start;
+    gap: var(--space-md);
+    padding: var(--space-sm);
+    color: white; }
+    @media (max-width: 1200px) {
+      .voyages .table-container {
+        grid-template-columns: 1fr; } }
+    .voyages .table-container .table {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      flex-wrap: wrap; }
+      .voyages .table-container .table--name {
+        font-weight: 400;
+        font-size: var(--text-md);
+        width: 250px; }
+      .voyages .table-container .table--item {
+        font-weight: 200;
+        font-size: var(--text-sm);
+        text-align: left;
+        width: 280px;
+        margin-right: 20px; }
+        @media (max-width: 992px) {
+          .voyages .table-container .table--item {
+            margin-right: 0; } }
+      .voyages .table-container .table--date {
+        width: min-content; }
+      .voyages .table-container .table > * {
+        margin-bottom: 0; }
+        @media (max-width: 992px) {
+          .voyages .table-container .table > * {
+            margin-bottom: 5px; } }
+  .voyages .btn {
+    margin: var(--space-xl) auto; }
+
+hr {
+  width: 100%;
+  color: white;
+  opacity: .3; }
+
 .caps-title {
   font-weight: 400;
   letter-spacing: .1em;
   text-transform: uppercase;
-  font-size: 1em; }
+  font-size: var(--text-sm); }

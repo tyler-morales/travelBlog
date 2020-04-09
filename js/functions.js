@@ -1,6 +1,8 @@
-// POPULATEDESTINATION fn (create place list items)
+/********* ADD COUNTRIES, STATES, CITIES ON HOME PAGE *********/
 const populateDestination = (locationContainer, placesArr) => {
-    placesArr.forEach(placeVisited => {
+    alphabetizedArr = placesArr.sort()
+
+    alphabetizedArr.forEach(placeVisited => {
         //create li item for each el in arr
         let listItem = document.createElement('li');
         // assign array item name to list item
@@ -11,8 +13,19 @@ const populateDestination = (locationContainer, placesArr) => {
         locationContainer.appendChild(listItem)
     });
 
+    if (locationContainer.id == 'states') {
+        let totalStates = 50
+        let statesVisited = locationContainer.childElementCount
+
+        let statesSection = document.getElementById('statesSection')
+        let newItem = document.createElement('h6')
+        newItem.classList.add('u-mb')
+        newItem.textContent = `*You have been to ${statesVisited} out of ${totalStates} states`
+        statesSection.appendChild(newItem)
+    }
+
     // return list of items
-    return locationContainer
+    // return locationContainer
 }
 
 // FADER TRANSITION

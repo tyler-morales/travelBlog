@@ -26,10 +26,10 @@ Typography
     --body-line-height: 1.4;
 }
 
-@include breakpoint(xs) {
+@include breakpoint(sm) {
     :root {
         --text-base-size: 1.1em;
-        --text-scale-ratio: 1;
+        --text-scale-ratio: 1.2;
     }
 }
 

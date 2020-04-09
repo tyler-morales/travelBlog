@@ -18,7 +18,7 @@
     <div class="above-fold">
         <!-- nav -->
         <nav>
-            <li><a href="/">travelshift</a></li>
+            <li><a href="/">Tmo.</a></li>
             <div class="nav-links">
                 <li><a href="#destination">Trips</a></li>
                 <li><a href="#">About</a></li>
@@ -45,7 +45,7 @@
         <a href="#fader">
             <div class="scroll-down">
                 <h6 class="scroll-down--text">scroll down</h6>
-                <i class="fa fa-angle-down"></i>
+                <i class="fa fa-angle-down scroll-down--arrow"></i>
             </div>
         </a>
     </div>
@@ -57,26 +57,56 @@
         <div id="destinations" class="places text-fill-animate"></div>
     </div>
 
-
     <section class="location-list">
         <div class="location-list__section">
-            <h4 class="location-list__section--title">Countries</h4>
-            <ul class="location-list__section__items">
-                <li class="location-list__section__items--item">🇺🇸 United States</li>
-                <li class="location-list__section__items--item">🇪🇨 Ecuador</li>
-                <li class="location-list__section__items--item">🇨🇦 Canada</li>
-            </ul>
+            <h4 class="location-list__section--title">Countries 🌍</h4>
+            <ul class="location-list__section__items" id="countries"></ul>
         </div>
-        <hr>
-        <div class="location-list__section">
-            <h4 class="location-list__section--title">States</h4>
+        <div class="location-list__section" id="statesSection">
+            <h4 class="location-list__section--title">States ⭐️</h4>
             <ul class="location-list__section__items" id="states"></ul>
         </div>
-        <hr>
         <div class="location-list__section">
-            <h4 class="location-list__section--title">Cities</h4>
+            <h4 class="location-list__section--title">Cities 🏙</h4>
             <ul class="location-list__section__items" id="cities"></ul>
         </div>
+    </section>
+
+    <section class="voyages">
+        <h3 class="voyages--title caps-title">Voyages</h3>
+        <h2 class="voyages--name">Canada 2019</h2>
+
+        <div class="table-container">
+            <div class="controls">
+                <div class="controls--left">
+                    <img src="/icons/arrow.svg" class="arrow" alt="arrow">
+                </div>
+                <div class="controls--right">
+                    <img src="/icons/arrow.svg" class="arrow" alt="arrow">
+                </div>
+            </div>
+
+            <div class="table">
+                <h3 class="table--name">Toronto</h3>
+                <p class="table--item">A vibrant and lively city; the largest city in middle North America</p>
+                <p class="table--date">2018</p>
+            </div>
+            <hr>
+            <div class="table">
+                <h3 class="table--name">Quebec City</h3>
+                <p class="table--item">A look into the past</p>
+                <p class="table--date">2018</p>
+            </div>
+            <hr>
+            <div class="table">
+                <h3 class="table--name">Mont Tremblant</h3>
+                <p class="table--item">A forest in the country</p>
+                <p class="table--date">2019</p>
+            </div>
+        </div>
+
+        <div class="btn voyage--btn">Learn more</div>
+
     </section>
 
     <footer class="footer">
