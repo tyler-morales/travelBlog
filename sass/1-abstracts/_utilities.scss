@@ -17,7 +17,10 @@ html {
   text-transform: uppercase;
   align-items: center;
   transition: all .5s;
-  &:hover{opacity: 1;}
+
+  &:hover {
+    opacity: 1;
+  }
 
   &--text {
     margin-right: 15px;
@@ -57,7 +60,11 @@ html {
   transform: rotate(180deg) !important;
 }
 
-.u-mb{
+.u-mb {
   margin-top: 20px;
   font-weight: 300;
+}
+
+.u-bold{
+  font-weight: bold;
 }
