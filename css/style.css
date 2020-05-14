@@ -50,6 +50,9 @@ html {
 .u-bold {
   font-weight: bold; }
 
+.u-white {
+  color: #fff; }
+
 * {
   margin: 0;
   padding: 0;
@@ -454,6 +457,56 @@ nav {
     font-style: italic;
     font-size: var(--text-xxxl);
     text-align: center; }
+
+body {
+  background-color: black; }
+
+.about {
+  margin: 50px auto;
+  padding: 40px;
+  background-image: url(/images/about/bg.png);
+  background-repeat: repeat;
+  background-position: center;
+  background-size: contain;
+  min-height: 90vh; }
+  @media (max-width: 992px) {
+    .about {
+      margin: 10px auto; } }
+  .about--img {
+    margin: 0 auto;
+    max-width: 400px;
+    height: auto;
+    display: flex;
+    margin-bottom: 20px; }
+  .about__description {
+    color: gray;
+    text-align: center; }
+    .about__description h4,
+    .about__description h5 {
+      font-weight: 300; }
+    .about__description .arrow-down {
+      margin-top: 20px;
+      transform: rotate(180deg); }
+
+.bio {
+  width: 70vw;
+  margin: 0 auto; }
+  .bio p {
+    max-width: 60vw;
+    font-size: 48px;
+    color: #383838; }
+    @media (max-width: 992px) {
+      .bio p {
+        font-size: 24px;
+        max-width: 100vw; } }
+
+.history {
+  max-width: 70vw;
+  margin: 110px auto;
+  width: 690px; }
+
+p, ul, h6:not(:last-child) {
+  margin-bottom: var(--space-md); }
 
 body {
   background-color: #ececec; }
