@@ -18,7 +18,7 @@ nav {
 
     &--title {
         text-align: center;
-        font-family: Playfair;
+        font-family: 'Playfair Display', serif;
         text-transform: uppercase;
         font-size: var(--text-xxxl);
         letter-spacing: 0.051em;
@@ -28,9 +28,8 @@ nav {
 
     &--date {
         text-align: center;
-        font-family: Playfair;
         font-size: var(--text-sm);
-        font-weight: lighter;
+        font-weight: 400;
     }
 
 }
@@ -46,14 +45,14 @@ nav {
     @media (max-width: 500px) {
         grid-template-columns: 1fr;
     }
-
 }
 
 .card {
-    font-family: playfair;
 
     &--title {
         text-align: center;
+        font-family: 'Playfair Display', serif;
+        font-weight: 500;
     }
 
     &--img {
@@ -62,7 +61,7 @@ nav {
 
     &--source {
         margin-bottom: 20px;
-        font-weight: lighter;
+        font-weight: 400;
     }
 
     .read-more-btn {
@@ -90,27 +89,4 @@ img {
     margin: 30px auto;
     opacity: 1;
     border: 1px solid black;
-}
-
-.highlights {
-    margin-top: 250px;
-
-    font-family: Playfair;
-
-    &__grid {
-        display: grid;
-
-        grid-template-columns: repeat(2, 1fr);
-        gap: 60px;
-        max-width: 80vw;
-        margin: 0 auto;
-
-        @media (max-width:800px) {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    &--title {
-        text-align: center;
-    }
 }

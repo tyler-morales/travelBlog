@@ -24,6 +24,7 @@ Typography
     /* line-height */
     --heading-line-height: 1.2;
     --body-line-height: 1.4;
+    --para-line-height:1.6;
 }
 
 @include breakpoint(sm) {
@@ -153,4 +154,10 @@ strong {
 
 li{
     margin-bottom: var(--space-xs);
+}
+
+.sub-title {
+    color: gray;
+    font-weight: 300;
+    line-height: 35px;
 }
